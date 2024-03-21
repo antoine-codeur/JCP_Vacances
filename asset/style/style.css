@@ -13,6 +13,7 @@
     --box-shadow : -2px 2px 4px rgba(0, 0, 0, 0.5);
     --red: #FF0000;
     --icon-light: #333333;
+    --notes-text-bg: #eaeaea;
 }
 /*BODY*/
 body {
@@ -211,6 +212,9 @@ main {
 /*SECTION-WIDGET*/
 #sectionWidget {
     width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
 }
 /*AJOUT-VOYAGE*/
 #ajoutVoyage {
@@ -247,4 +251,33 @@ main {
 #buttonAjoutVoyage:hover {
     background-color: var(--button-add-hover);
     cursor: pointer;
+}
+/*NOTES*/
+#notes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+}
+#notesTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1vw;
+}
+#notes textarea {
+    border: none;
+    border-radius: 20px;
+    background-color: var(--notes-text-bg);
+    width: 100%;
+    resize: vertical;
+    padding: 10px;
+    box-shadow: var(--box-header-shadow);
+}
+#notes textarea:focus {
+    outline: 2px solid var(--primary-color);
 }
