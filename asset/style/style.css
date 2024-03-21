@@ -56,21 +56,22 @@ body {
 }
 .menuBord {
     font-weight: bold;
-
     border-radius: 20px;
-    padding: 10px;
 }
 .menuBord a {
     display: flex;
     align-items: center;
     color: var(--text-color-light);
     text-decoration: none;
+    padding: 10px;
 }
-.menuBord:hover {
+.menuBord:hover, 
+.menuBord.active {
     background-color: var(--text-color-light);
 }
-.menuBord:hover a{
-    color: var(--text-color-dark);
+.menuBord:hover a,
+.menuBord.active a{
+        color: var(--text-color-dark);
 }
 /*HEADER*/
 header {

@@ -5,7 +5,7 @@
     <nav id="menuDeBord">
         <span>Menu de bord</span>
         <div class="menuBordMain">
-            <div class="menuBord">
+            <div class="menuBord active">
                 <a href="#">Tableau De Bord</a>
             </div>
             <div class="menuBord">
