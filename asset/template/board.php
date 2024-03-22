@@ -38,7 +38,7 @@
                 <a href="#">Aide</a>
             </div>
             <div class="menuBord">
-                <a href="#">Déconnexion</a>
+                <a href="?logout='1'">Déconnexion</a>
             </div>
         </div>
     </nav>

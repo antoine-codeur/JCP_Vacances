@@ -14,6 +14,7 @@
     --red: #FF0000;
     --icon-light: #333333;
     --notes-text-bg: #eaeaea;
+    --block-bg: #f5deb3;
 }
 /*BODY*/
 body {
@@ -106,6 +107,15 @@ header {
     border-radius: 50px;
     box-shadow: var(--box-shadow);
 }
+/*BLOCKS*/
+/*#search-container/#preview/#listVoyages/#formulaire/#ajoutVoyage/#notes*/
+.block {
+    background-color: var(--block-bg);
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    width: 100%;
+}
+
 /*SECTION-MAIN*/
 main {
     display: flex;
@@ -122,14 +132,13 @@ main {
 #search-container {
     display: flex;
     align-items: center;
-    border-radius: 20px;
     padding: 5px 15px;
-    box-shadow: var(--box-shadow);
 }
 #search-input {
     border: none;
     outline: none;
     flex-grow: 1;
+    background-color: var(--block-bg);
 }
 #search-button {
     background: none;
@@ -151,9 +160,6 @@ main {
     display: flex;
     flex-direction: column;
     padding: 15px 20px;
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: var(--box-shadow);
 }
 #preview h1 {
     font-size: 2.5rem;
@@ -197,21 +203,65 @@ main {
     flex-direction: column;
     gap: 20px;
     padding: 15px 20px;
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: var(--box-shadow);
-}
-#listVoyages h2 {
-    font-size: 1rem;
-    margin: 0rem;
 }
 #thImg {
     width: 100px;
     height: auto;
 }
+/*FORMULAIRE/LISTE-VOYAGE*/
+#listVoyages h2,
+#formulaire h2 {
+    font-size: 1rem;
+    margin: 0rem;
+}
+/*FORMULAIRE*/
+#formulaire {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+}
+#formulaire h2 {
+    background-color: var(--text-color-dark);
+    color: var(--text-color-light);
+    padding: 10px;
+    border-radius: 20px;
+}
+/*FORMULAIRE-EDIT*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+}
+
+.close {
+    color: var(--red);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /*SECTION-WIDGET*/
 #sectionWidget {
-    width: 300px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 2vw;
@@ -223,12 +273,9 @@ main {
     align-items: center;
     gap: 20px;
     padding: 15px 20px;
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: var(--box-shadow);
 }
 /*BUTTON-AJOUT-VOYAGE*/
-#buttonAjoutVoyage {
+.formVoyageButton {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -239,16 +286,16 @@ main {
     width: 100%;
     transition: ease-in-out 0.3s;
 }
-#buttonAjoutVoyage span{
+.formVoyageButton span{
     font-weight: 700;
 }
-#buttonAjoutVoyage #sizeSVG {
+.formVoyageButton #sizeSVG {
     height: 20px;
 }
-#buttonAjoutVoyage #plusSVG {
+.formVoyageButton #plusSVG {
     fill: var(--icon-light);
 }
-#buttonAjoutVoyage:hover {
+.formVoyageButton:hover {
     background-color: var(--button-add-hover);
     cursor: pointer;
 }
@@ -258,9 +305,6 @@ main {
     flex-direction: column;
     gap: 10px;
     padding: 15px 20px;
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: var(--box-shadow);
 }
 #notesTitle {
     display: flex;

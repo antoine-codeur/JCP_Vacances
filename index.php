@@ -1,5 +1,18 @@
-<?php include 'script/core/db/db.php'; ?>
+<?php
+session_start();
 
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['user_id']);
+  unset($_SESSION['username']);
+  header("Location: login.php");
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,10 +32,14 @@
                 <!-- AJOUT DU CONTENU -->
         <?php include 'asset/template/model/searchBar.php'; ?>
         <?php include 'asset/template/model/preview.php'; ?>
-        <?php include 'asset/template/model/listVoyages.php'; ?>
+        <?php $idVoyageButton="id='buttonAjoutVoyage'";
+        include 'asset/template/model/listVoyages.php'; ?>
+        <?php include 'asset/template/formulaire.php'; ?>
       </section>
       <?php include 'asset/template/widget.php'; ?>
     </main>
   </div>
+  <script src="script/javascript/createVoyage.js"></script>
+  <script src="script/javascript/editVoyage.js"></script>
 </body>
 </html>
