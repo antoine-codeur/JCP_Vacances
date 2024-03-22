@@ -28,14 +28,40 @@ if (isset($_GET['logout'])) {
   <div id="main-header">
     <?php include 'asset/template/header.php'; ?>
     <main>
-      <section id="sectionMain">
-                <!-- AJOUT DU CONTENU -->
-        <?php include 'asset/template/model/searchBar.php'; ?>
-        <?php include 'asset/template/model/preview.php'; ?>
-        <?php $idVoyageButton="id='buttonAjoutVoyage'";
-        include 'asset/template/model/listVoyages.php'; ?>
-        <?php include 'asset/template/formulaire.php'; ?>
+    <section id="sectionMain">
+      <?php
+        $page = $_GET['page'] ?? 'home';
+        switch ($page) {
+            case 'favorite':
+                include 'asset/page/favorite.php';
+                break;
+            case 'newVoyage':
+                include 'asset/page/newVoyage.php';
+                break;
+            case 'draft':
+                include 'asset/page/draft.php';
+                break;
+            case 'listVoyage':
+                include 'asset/page/listVoyage.php';
+                break;
+            case 'images':
+                include 'asset/page/images.php';
+                break;
+            case 'account':
+                include 'asset/page/account.php';
+                break;
+            case 'settings':
+                include 'asset/page/settings.php';
+                break;
+            case 'help':
+                include 'asset/page/help.php';
+                break;
+            default:
+                include 'asset/page/home.php';
+        }
+        ?>
       </section>
+            <!-- Section widget -->
       <?php include 'asset/template/widget.php'; ?>
     </main>
   </div>
