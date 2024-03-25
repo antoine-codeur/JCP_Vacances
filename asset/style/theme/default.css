@@ -1,0 +1,18 @@
+:root {
+    --primary-color: #1563B8;
+    --background: #ffffff;
+    --black-title: #222222;
+    --black-text: #333333;
+    --text-color-light: #ffffff;
+    --text-color-dark: #333333;
+    --bouton-bgcolor-light: #ffffff;
+    --button-add: #53BC00a0;
+    --button-add-hover: #53BC00;
+    --commentary: #D5D5D5;
+    --box-header-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5);
+    --box-shadow : -2px 2px 4px rgba(0, 0, 0, 0.5);
+    --red: #FF0000;
+    --icon-light: #333333;
+    --notes-text-bg: #eaeaea;
+    --block-bg: #f5deb3;
+}

@@ -5,22 +5,22 @@
     <nav id="menuDeBord">
         <span>Menu de bord</span>
         <div class="menuBordMain">
-            <div class="menuBord active">
+            <div class="menuBord <?php echo $page === 'home' ? 'active' : ''; ?>">
                 <a href="index.php">Tableau De Bord</a>
             </div>
-            <div class="menuBord">
+            <div class="menuBord <?php echo $page === 'favorite' ? 'active' : ''; ?>">
                 <a href="index.php?page=favorite">Favoris</a>
             </div>
-            <div class="menuBord">
+            <div class="menuBord <?php echo $page === 'newVoyage' ? 'active' : ''; ?>">
                 <a href="index.php?page=newVoyage">Publier Un Nouveau Voyage</a>
             </div>
-            <div class="menuBord">
+            <div class="menuBord <?php echo $page === 'draft' ? 'active' : ''; ?>">
                 <a href="index.php?page=draft">Brouillons</a>
             </div>
-            <div class="menuBord">
+            <div class="menuBord <?php echo $page === 'listVoyage' ? 'active' : ''; ?>">
                 <a href="index.php?page=listVoyage">Liste Des Voyages</a>
             </div>
-            <div class="menuBord">
+            <div class="menuBord <?php echo $page === 'images' ? 'active' : ''; ?>">
                 <a href="index.php?page=images">Images</a>
             </div>
         </div>
@@ -28,13 +28,13 @@
     <nav id="Settings">
         <span>Settings</span>
         <div class="menuBordMain">
-            <div class="menuBord">
+            <div class="menuBord <?php echo $page === 'account' ? 'active' : ''; ?>">
                 <a href="index.php?page=account">Mon Profile</a>
             </div>            
-            <div class="menuBord">
+            <div class="menuBord <?php echo $page === 'settings' ? 'active' : ''; ?>">
                 <a href="index.php?page=settings">Réglages</a>
             </div>
-            <div class="menuBord">
+            <div class="menuBord <?php echo $page === 'help' ? 'active' : ''; ?>">
                 <a href="index.php?page=help">Aide</a>
             </div>
             <div class="menuBord">

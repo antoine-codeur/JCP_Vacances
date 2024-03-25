@@ -35,12 +35,12 @@
     </table>
     <div id="editModal" class="modal">
     <!-- Contenu de la fenêtre modale -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <?php $nameForm = "Formulaire Pour La Création d’Un Nouveau Voyage";
-          include 'asset/template/formulaire.php'; ?>    
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <?php $nameForm = "Formulaire Pour La Création d’Un Nouveau Voyage";
+            include 'asset/template/formulaire.php'; ?>    
           </div>
-</div>
+    </div>
     <?php $addVoyageButton="Nouveau Voyage"; $classVoyageButton ="class='formVoyageButton'"; $sauvegarde = null;
         include 'asset/template/model/button-add-voyage.php';?>
 </div>

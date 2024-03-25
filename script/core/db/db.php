@@ -5,13 +5,11 @@ class Db {
     private $password = "parapluit";
     private $dbname = "JCP_Vacances";
     public $conn;
-
     public function connect() {
         $this->conn = null;
         try {
             $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->dbname, $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
         } catch(PDOException $exception) {
             echo "Erreur de connexion : " . $exception->getMessage();
             exit;
@@ -33,7 +31,6 @@ class Db {
             $stmt = $this->conn->prepare("SELECT username FROM user WHERE id_user = :userId");
             $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
             $stmt->execute();
-            
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             return $result ? $result['username'] : null;
         } catch(PDOException $exception) {
@@ -52,5 +49,33 @@ class Db {
             return false;
         }
     }
-    
+    public function getUserThemeId($userId) {
+        try {
+            $stmt = $this->conn->prepare("SELECT id_theme FROM user WHERE id_user = ?");
+            $stmt->execute([$userId]);
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            if ($result) {
+                return $result['id_theme'];
+            } else {
+
+                return null;
+            }
+        } catch(PDOException $exception) {
+            echo "Erreur lors de la récupération de l'id_theme : " . $exception->getMessage();
+            return null;
+        }
+    }
+    public function updateUserThemeId($userId, $themeId) {
+        try {
+            $stmt = $this->conn->prepare("UPDATE user SET id_theme = :themeId WHERE id_user = :userId");
+            $stmt->bindParam(':themeId', $themeId, PDO::PARAM_INT);
+            $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+            return $stmt->execute();
+        } catch (PDOException $exception) {
+            error_log("Erreur lors de la mise à jour de l'id_theme : " . $exception->getMessage());
+            return false;
+        }
+    }
+
 }
