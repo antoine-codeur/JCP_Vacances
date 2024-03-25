@@ -74,7 +74,9 @@ $page = $_GET['page'] ?? 'home';
         ?>
       </section>
             <!-- Section widget -->
-      <?php include 'asset/template/widget.php'; ?>
+      <?php if(!isset($_SESSION['widget_toggle']) || $_SESSION['widget_toggle']): ?>
+        <?php include 'asset/template/widget.php'; ?>
+      <?php endif; ?>    
     </main>
   </div>
   <script src="script/javascript/voyage/createVoyage.js"></script>
