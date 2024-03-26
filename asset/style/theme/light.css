@@ -6,7 +6,9 @@
     --text-color-dark: #f44336;
     --bouton-bgcolor-light: #ffffff;
     --button-add: #f44336;
-    --button-add-hover: #d32f2f;
+    --button-edit: #4CAF50;
+    --button-add-hover: #45a049;
+    --button-edit-hover: #d32f2f;
     --commentary: #333333;
     --box-header-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5);
     --box-shadow : -2px 2px 4px rgba(0, 0, 0, 0.5);

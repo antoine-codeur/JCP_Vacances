@@ -42,7 +42,7 @@ $page = $_GET['page'] ?? 'home';
   
     <main>
       <section id="sectionMain">
-      <?php
+      <?php include 'asset/template/widget/searchBar.php';
         switch ($page) {
             case 'favorite':
                 include 'asset/page/favorite.php';
@@ -79,7 +79,5 @@ $page = $_GET['page'] ?? 'home';
       <?php endif; ?>    
     </main>
   </div>
-  <script src="script/javascript/voyage/createVoyage.js"></script>
-  <script src="script/javascript/voyage/editVoyage.js"></script>
 </body>
 </html>

@@ -1,1 +1,1 @@
-<?php include 'asset/template/formulaire.php'; ?>
+<?php include 'asset/template/formulaire.php';

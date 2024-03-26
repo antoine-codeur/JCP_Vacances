@@ -24,7 +24,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     
                     // Mettre à jour le titre du formulaire et le bouton de soumission
                     document.querySelector("#formulaire h2").textContent = "Modifier le Voyage";
-                    document.querySelector("#formulaire input[type='submit']").value = "Mettre à jour";
+                    var bouton = document.querySelector("#formulaire button[type='submit']");
+                    bouton.querySelector("span").textContent = "Mettre à jour";
+                    bouton.setAttribute("class", "VoyageButton editVoyage");
+                    var svgElement = bouton.querySelector("svg");
+                    svgElement.style.display = "none";
 
                     // Préremplir les sélections de catégorie et de formule
                     document.querySelector("select[name='id_categorie']").value = data.id_categorie;

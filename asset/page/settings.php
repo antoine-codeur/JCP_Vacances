@@ -5,12 +5,15 @@
         <option value="2" <?php if (isset($_SESSION['theme_id']) && $_SESSION['theme_id'] == 2) echo 'selected'; ?>>Sombre</option>
         <option value="3" <?php if (isset($_SESSION['theme_id']) && $_SESSION['theme_id'] == 3) echo 'selected'; ?>>Clair</option>
     </select>
-    <br>
-    <span>Masquer le header</span>
+    <div class="rowForm">
+        <span>Masquer le header</span>
+    </div>
     <input type="checkbox" name="header_toggle" value="1" <?php if (isset($_SESSION['header_toggle']) && !$_SESSION['header_toggle']) echo 'checked'; ?>>
-    <br>
-    <span>Masquer les widgets</span>
+    <div class="rowForm">
+        <span>Masquer les widgets</span>
+    </div>
     <input type="checkbox" name="widget_toggle" value="1" <?php if (isset($_SESSION['widget_toggle']) && !$_SESSION['widget_toggle']) echo 'checked'; ?>>
-    <br>
-    <input type="submit" value="Save">
+    <div class="rowForm">
+        <input type="submit" value="Save">
+    </div>
 </form>

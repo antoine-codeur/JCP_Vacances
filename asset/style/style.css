@@ -332,28 +332,38 @@ form {
     padding: 15px 20px;
 }
 /*BUTTON-AJOUT-VOYAGE*/
-.formVoyageButton {
+.addVoyage {
+    background-color: var(--button-add);
+}
+.editVoyage {
+    background-color: var(--button-edit);
+}
+.VoyageButton {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 1em;
     border-radius: 20px;
     padding: 10px;
     border: none;
-    background-color: var(--button-add);
     width: 100%;
     transition: ease-in-out 0.3s;
 }
-.formVoyageButton span{
+.VoyageButton span{
     font-weight: 700;
 }
-.formVoyageButton #sizeSVG {
+.VoyageButton #sizeSVG {
     height: 20px;
 }
-.formVoyageButton #plusSVG {
+.VoyageButton #plusSVG {
     fill: var(--icon-light);
 }
-.formVoyageButton:hover {
+.addVoyage:hover {
     background-color: var(--button-add-hover);
+    cursor: pointer;
+}
+.editVoyage:hover {
+    background-color: var(--button-edit-hover);
     cursor: pointer;
 }
 /*NOTES*/
