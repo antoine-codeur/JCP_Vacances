@@ -34,19 +34,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Connexion</title>
+    <title>Connexion</title>  
+    <link rel="stylesheet" href="asset/style/theme/default.css">
+    <link rel="stylesheet" href="asset/style/style.css">
 </head>
-<body>
-    <h2>Connexion</h2>
-    <?php if (!empty($message)): ?>
-        <p><?= $message ?></p>
-    <?php endif; ?>
-    <form method="post">
-        <label for="username">Nom d'utilisateur:</label><br>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">Mot de passe:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Connexion">
-    </form>
+<body id="bodyLogin">
+    <div id="login" class="block">
+        <form method="post">
+            <h1>Connexion</h1>
+            <?php if (!empty($message)): ?>
+                <p><?= $message ?></p>
+            <?php endif; ?>
+            <div>
+                <label for="username">Nom d'utilisateur:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Mot de passe:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <input type="submit" value="Connexion">
+        </form>
+    </div>
 </body>
 </html>

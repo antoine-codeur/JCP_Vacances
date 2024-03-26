@@ -15,6 +15,24 @@ body {
     flex-direction: column;
     gap: 2vw;
 }
+h1,h2,h3,h4,h5,h6,th {
+    color: var(--black-title);
+    line-height: 1.2em;
+
+}
+p,li,span,img,td {
+    color: var(--black-text);
+    line-height: 1.3em;
+
+}
+/*BODY-LOGIN*/
+#bodyLogin {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 /*BOARD*/
 #BOARD {
     width: 20vw;
@@ -94,21 +112,14 @@ header {
     box-shadow: var(--box-shadow);
 }
 /*BLOCKS*/
-/*#search-container/#preview/#listVoyages/#formulaire/#ajoutVoyage/#notes*/
+/*#search-container/#preview/#listVoyages/#formulaire/#ajoutVoyage/#notes/#login*/
 .block {
     background-color: var(--block-bg);
     box-shadow: var(--box-shadow);
     border-radius: 20px;
     width: 100%;
 }
-
 /*SECTION-MAIN*/
-h1,h2,h3,h4,h5,h6,th {
-    color: var(--black-title);
-}
-p,li,span,img,td {
-    color: var(--black-text);
-}
 main {
     display: flex;
     flex-direction: row;
@@ -202,18 +213,44 @@ main {
 }
 /*FORMULAIRE/LISTE-VOYAGE*/
 #listVoyages h2,
-#formulaire h2 {
+#formulaire h2,
+#login h1 {
     font-size: 1rem;
     margin: 0rem;
 }
-/*FORMULAIRE*/
-#formulaire {
+/*FORMULAIRE/LOGIN*/
+#formulaire,
+#login {
+    padding: 15px 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 15px 20px;
+    gap: 1em;
 }
-#formulaire h2 {
+#login {
+    width: 450px;
+}
+#formulaire form,
+#login form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+}
+#login form div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+    gap: 1em;
+}
+#formulaire form div input,
+#login form div input {
+    flex: 1;
+    border: none;
+    border-radius: 20px;
+    max-width: 300px;
+}
+#formulaire h2,
+#login h1 {
     background-color: var(--text-color-dark);
     color: var(--text-color-light);
     padding: 10px;

@@ -80,7 +80,6 @@ $page = $_GET['page'] ?? 'home';
     </main>
   </div>
   <script src="script/javascript/voyage/createVoyage.js"></script>
-  <script src="script/javascript/voyage/createVoyageModal.js"></script>
   <script src="script/javascript/voyage/editVoyage.js"></script>
 </body>
 </html>

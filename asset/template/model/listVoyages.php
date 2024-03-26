@@ -14,10 +14,13 @@
         require_once 'script/core/db/db.php';
         $db = new Db();
         $conn = $db->connect();
-        $stmt = $db->prepare("SELECT * FROM voyage");
+        // Incluez la colonne `draft` dans votre sélection
+        $stmt = $db->prepare("SELECT *, draft FROM voyage");
         $stmt->execute();
         while ($voyage = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<tr>
+            // Vérifiez si le voyage est un brouillon et ajoutez une classe `draft` le cas échéant
+            $rowClass = $voyage['draft'] ? "draft" : "";
+            echo "<tr class='".$rowClass."'>
                     <td><img src='".$voyage['image_url']."' alt='Image' style='width: 100px;'></td>
                     <td>".$voyage['title']."</td>
                     <td>".$voyage['date_debut']."</td>
@@ -29,7 +32,7 @@
                     <td>
                         <a href='script/core/db/voyage/deleteVoyage.php?id=".$voyage['id_voyage']."'>Supprimer</a>
                     </td>
-                  </tr>";
+                </tr>";
         }
         ?>
     </table>
