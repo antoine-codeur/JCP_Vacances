@@ -45,11 +45,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
             <?php if (!empty($message)): ?>
                 <p><?= $message ?></p>
             <?php endif; ?>
-            <div>
+            <div class="rowForm">
                 <label for="username">Nom d'utilisateur:</label>
                 <input type="text" id="username" name="username" required>
             </div>
-            <div>
+            <div class="rowForm">
                 <label for="password">Mot de passe:</label>
                 <input type="password" id="password" name="password" required>
             </div>

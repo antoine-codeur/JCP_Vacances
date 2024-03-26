@@ -1,2 +1,2 @@
-<?php $idVoyageButton="id='buttonAjoutVoyage'";
-    include 'asset/template/model/listVoyages.php'; ?>
+<?php $idVoyageButton="buttonAjoutVoyage";
+    include 'asset/template/model/listVoyages.php';
