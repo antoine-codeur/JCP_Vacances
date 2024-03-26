@@ -16,7 +16,17 @@ class Db {
         }
         return $this->conn;
     }
-
+    public function updateLastLogin($userId, $lastLogin) {
+        try {
+            $stmt = $this->conn->prepare("UPDATE user SET last_login = :lastLogin WHERE id_user = :userId");
+            $stmt->bindParam(':lastLogin', $lastLogin, PDO::PARAM_STR);
+            $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+            return $stmt->execute();
+        } catch (PDOException $exception) {
+            echo "Erreur lors de la mise à jour du timestamp de dernière connexion : " . $exception->getMessage();
+            return false;
+        }
+    }    
     public function prepare($sql) {
         try {
             $stmt = $this->conn->prepare($sql);

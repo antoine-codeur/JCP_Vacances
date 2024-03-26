@@ -9,17 +9,30 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+// Inclure la classe Db
+require_once 'script/core/db/db.php';
+
 if (isset($_GET['logout'])) {
+    // Créer une instance de la classe Db et établir la connexion à la base de données
+    $db = new Db();
+    $db->connect();
+
+    // Mettre à jour le timestamp de dernière connexion dans la base de données
+    $userId = $_SESSION['user_id'];
+    $lastLogin = date('Y-m-d H:i:s');
+    $db->updateLastLogin($userId, $lastLogin);
+
+    // Détruire la session et rediriger vers la page de connexion
     session_destroy();
     unset($_SESSION['user_id']);
     unset($_SESSION['username']);
     header("Location: login.php");
     exit;
-    
 }
 
 $page = $_GET['page'] ?? 'home';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">

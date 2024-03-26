@@ -13,7 +13,6 @@ class UserSession {
         return false;
     }
     public function logout() {
-    
         $_SESSION = array();
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
@@ -23,7 +22,7 @@ class UserSession {
             );
         }
         session_destroy();
-    }
+    }    
     public function isLoggedIn() {
         return isset($_SESSION['user']);
     }
