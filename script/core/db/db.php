@@ -38,6 +38,9 @@ class Db {
     }
     public function getUsernameById($userId) {
         try {
+            if(!$this->conn) {
+                $this->connect();
+            }
             $stmt = $this->conn->prepare("SELECT username FROM user WHERE id_user = :userId");
             $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
             $stmt->execute();
